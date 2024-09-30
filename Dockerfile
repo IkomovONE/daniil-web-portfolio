@@ -11,7 +11,7 @@ COPY back-end/requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy all backend files (including main.py)
-COPY back-end/ .
+COPY back-end/ . 
 
 # Stage 2: Build Frontend
 FROM node:14 AS frontend
@@ -24,7 +24,7 @@ COPY front-end/package.json .
 RUN npm install
 
 # Copy all frontend files
-COPY front-end/package.json .
+COPY front-end/ .  
 
 # Final Stage: Combine both applications
 FROM python:3.10
