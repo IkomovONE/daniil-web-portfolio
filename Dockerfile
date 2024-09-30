@@ -1,23 +1,30 @@
 # Use a multi-stage build
+
 # Stage 1: Build Backend
 FROM python:3.10 AS backend
 
+# Set working directory for the backend
 WORKDIR /app/backend
 
-COPY back-end/requirements.txt .
+# Copy the requirements file and install dependencies
+COPY back-end/requirements.txt .  # Copy requirements.txt to /app/backend
 RUN pip install -r requirements.txt
 
-COPY back-end/ .
+# Copy all backend files (including main.py)
+COPY back-end/ .  # Copy everything from back-end to /app/backend
 
 # Stage 2: Build Frontend
 FROM node:14 AS frontend
 
+# Set working directory for the frontend
 WORKDIR /app/frontend
 
-COPY front-end/package.json .
+# Copy the package.json file and install dependencies
+COPY front-end/package.json .  # Copy package.json to /app/frontend/
 RUN npm install
 
-COPY front-end/ .
+# Copy all frontend files
+COPY front-end/ .  # Copy everything from front-end to /app/frontend/
 
 # Final Stage: Combine both applications
 FROM python:3.10
@@ -28,13 +35,11 @@ COPY --from=backend /app/backend /app/backend
 # Copy frontend files
 COPY --from=frontend /app/frontend /app/frontend
 
-# Set working directory
+# Set working directory to the backend
 WORKDIR /app/backend
 
-# Expose the ports
+# Expose the ports (ensure these are the correct ports)
 EXPOSE 8000 3000
 
-# Start commands for backend and frontend (adjust as necessary)
-CMD ["python", "app/main.py"]  # Adjust to your back-end start command
-# For front-end, you may need to run a command like `npm start` 
-# You might want to handle the front-end separately, e.g., using a reverse proxy like Nginx, or serve it through the back-end.
+# Start the backend application (adjust as necessary)
+CMD ["python", "main.py"]  # Updated to point directly to main.py
