@@ -1,7 +1,7 @@
 # Use a multi-stage build
 
 # Stage 1: Build Backend
-FROM python:3.10 AS backend
+FROM python:3.11.10 AS backend
 
 # Set working directory for the backend
 WORKDIR /app/backend
