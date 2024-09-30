@@ -2,6 +2,7 @@ from typing import Union, List, Dict
 import json
 import os
 import yaml
+import uvicorn
 from pydantic import BaseModel
 from fastapi import HTTPException
 from fastapi import FastAPI, Header, Request
@@ -17,9 +18,14 @@ app = FastAPI()
 
 #Initializing the app with FastAPI
 
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Default to port 8000 if PORT is not set
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins="http://localhost:3000/",
+    allow_origins="https://daniil-web-portfolio.onrender.com",
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers="*",
