@@ -7,11 +7,11 @@ FROM python:3.10 AS backend
 WORKDIR /app/backend
 
 # Copy the requirements file and install dependencies
-COPY back-end/requirements.txt .  # Copy requirements.txt to /app/backend
+COPY back-end/requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy all backend files (including main.py)
-COPY back-end/ .  # Copy everything from back-end to /app/backend
+COPY back-end/ .
 
 # Stage 2: Build Frontend
 FROM node:14 AS frontend
@@ -20,11 +20,11 @@ FROM node:14 AS frontend
 WORKDIR /app/frontend
 
 # Copy the package.json file and install dependencies
-COPY front-end/package.json .  # Copy package.json to /app/frontend/
+COPY front-end/package.json .
 RUN npm install
 
 # Copy all frontend files
-COPY front-end/ .  # Copy everything from front-end to /app/frontend/
+COPY front-end/package.json .
 
 # Final Stage: Combine both applications
 FROM python:3.10
@@ -42,4 +42,4 @@ WORKDIR /app/backend
 EXPOSE 8000 3000
 
 # Start the backend application (adjust as necessary)
-CMD ["python", "main.py"]  # Updated to point directly to main.py
+CMD ["python", "main.py"] 
