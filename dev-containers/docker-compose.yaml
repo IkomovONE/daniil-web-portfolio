@@ -1,17 +1,9 @@
 services:
-    backend-app:
-        build:
-            context: ../back-end
-        volumes:
-            - "../back-end/server_conf.yaml:/app/server_conf.yaml"
-            - "../back-end/assets/cards.json:/app/assets/cards.json"
-            - "../back-end/assets/info.json:/app/assets/info.json"
-        ports:
-            - 8000:8000
-        restart: always
-    frontend-app:
-        build:
-            context: ../front-end
-        ports:
-            - 3000:3000
-        restart: always
+  app:
+    build:
+      context: .  # Build from the root directory
+      dockerfile: Dockerfile  # The Dockerfile in the root
+    ports:
+      - "8000:8000"  # Back-end port
+      - "3000:3000"  # Front-end port (if served separately)
+    restart: always
