@@ -1,0 +1,40 @@
+[
+   {
+    "lanCode": "en",
+    "editUI": "Edit",
+    "saveUI": "Save",
+    "defaultUI": "Default",
+    "exitUI": "Exit",
+    "logoutUI": "Sign out",
+    "showNameMessage": "Show user name on the top bar",
+    "infoMessage": "Info area",
+    "showUserMessage": "Show user name on the top bar",
+    "appName": "Application Name",
+    "infoAreaConfirm": "Everyone will be able to see your change in the info area. Are you sure you want to continue?",
+    "exitEditCardConfirm": "Any unsaved changes will be lost. Are you sure you want to exit?",
+    "editCardConfirm": "Everyone will be able to see your change in the content of the card. Are you sure you want to continue?",
+    "setDefaultConfim": "Are you sure you want to set the default?",
+    "editAppNameConfirm": "Everyone will be able to see your change in the app name. Are you sure you want to continue?",
+    "updateMessageFail": "Error updating the message",
+    "updateMessageSuccess": "Message updated successfully"
+   },
+   {
+    "lanCode": "fi",
+    "editUI": "Muokata",
+    "saveUI": "Tallentaa",
+    "defaultUI": "Oletus",
+    "exitUI": "Poistua",
+    "logoutUI": "Kirjaudu ulos",
+    "showNameMessage": "Näytä käyttäjänimi yläpalkissa",
+    "infoMessage": "Tietoalue",
+    "showUserMessage": "Näytä käyttäjänimi yläpalkissa",
+    "appName": "Sovelluksen nimi",
+    "infoAreaConfirm": "Kaikki näkevät muutoksesi tietoalueella. Oletko varma, että haluat jatkaa?",
+    "exitEditCardConfirm": "Kaikki tallentamattomat muutokset menetetään. Oletko varma, että haluat poistua?",
+    "editCardConfirm": "Kaikki näkevät muutoksesi kortin sisällössä. Oletko varma, että haluat jatkaa?",
+    "setDefaultConfim": "Oletko varma, että haluat asettaa oletusasetuksen?",
+    "editAppNameConfirm": "Kaikki näkevät muutoksesi sovelluksen nimessä. Oletko varma, että haluat jatkaa?",
+    "updateMessageFail": "Virhe päivitettäessä viestiä",
+    "updateMessageSuccess": "Viesti päivitetty onnistuneesti"
+   }
+]
