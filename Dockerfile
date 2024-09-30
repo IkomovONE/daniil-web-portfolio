@@ -43,7 +43,7 @@ COPY --from=frontend /app/frontend /app/frontend
 ENV PATH="/app/backend/venv/bin:$PATH"
 
 # Expose the ports (ensure these are the correct ports)
-EXPOSE 8000 3000
+EXPOSE 10000
 
 # Start the backend application (adjust as necessary)
 CMD ["python", "main.py"]
