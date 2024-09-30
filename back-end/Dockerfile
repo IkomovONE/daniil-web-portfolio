@@ -29,10 +29,12 @@ RUN adduser \
 # Leverage a bind mount to requirements.txt to avoid having to copy them into
 # into this layer.
 
+# Install virtual environment package
+RUN python -m venv venv
+
+# Activate the virtual environment and install dependencies
 COPY back-end/requirements.txt .
-RUN --mount=type=cache,target=/root/.cache/pip \
-    --mount=type=bind,source=requirements.txt,target=requirements.txt \
-    python -m pip install -r requirements.txt
+RUN . venv/bin/activate && pip install --no-cache-dir -r requirements.txt
 
 # Switch to the non-privileged user to run the application.
 USER appuser
