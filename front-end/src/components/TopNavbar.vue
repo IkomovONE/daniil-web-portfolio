@@ -99,7 +99,7 @@ export default {
     },
     selectedLanguage(lang) {
       console.log('Setting language:', lang);
-      axios.get(`http://localhost:8000/language/${lang}`)
+      axios.get(`http://https://daniil-web-portfolio.onrender.com/language/${lang}`)
         .then(response => {
           this.logoutUI = response.data.logoutUI;
         })

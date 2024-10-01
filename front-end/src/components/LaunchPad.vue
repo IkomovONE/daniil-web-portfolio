@@ -71,7 +71,7 @@ export default {
   },
   methods: {
      fetchData() {
-      axios.get('http://localhost:8000/applications/', {
+      axios.get('https://daniil-web-portfolio.onrender.com/applications/', {
         headers: {
           'X-Api-Key': this.apiKey
         }
@@ -124,7 +124,7 @@ export default {
 
     saveEditedMessage() {
     // Send a POST request to update the message
-    axios.post('http://localhost:8000/info/', { message: this.msg }, // Data object
+    axios.post('https://daniil-web-portfolio.onrender.com/info/', { message: this.msg }, // Data object
     { headers: { 'X-Api-Key': this.apiKey } })
         .then(response => {
           this.resp=response.data
@@ -171,7 +171,7 @@ export default {
 
 
 getLanguage() {
-  axios.get(`http://localhost:8000/language/${this.selectedLanguage}`)
+  axios.get(`https://daniil-web-portfolio.onrender.com/language/${this.selectedLanguage}`)
     .then(response => {
       console.log('Language set:', response.data);
       console.log('editUI set: ', response.data.editUI);

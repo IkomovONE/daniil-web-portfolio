@@ -54,7 +54,7 @@ export default {
       }
     },
     fetchUserInfo() {
-      axios.get('http://localhost:8000/userinfo/')
+      axios.get('https://daniil-web-portfolio.onrender.com/userinfo/')
         .then(response => {
           this.customerOrganization = response.data.user_organization;
           this.userName = response.data.user_name;

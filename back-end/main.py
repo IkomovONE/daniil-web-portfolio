@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins="https://daniil-web-portfolio.onrender.com",
+    allow_origins="https://ikomovone-cv.onrender.com",
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers="*",
