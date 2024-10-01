@@ -33,7 +33,7 @@ RUN adduser \
 RUN python -m venv venv
 
 # Activate the virtual environment and install dependencies
-COPY back-end/requirements.txt .
+COPY requirements.txt .
 RUN . venv/bin/activate && pip install --no-cache-dir -r requirements.txt
 
 # Switch to the non-privileged user to run the application.
